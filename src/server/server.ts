@@ -78,7 +78,9 @@ class Server {
     private routerMiddleware() {
         this.app.use('/api', api_router);
         this.app.get(/^\/$/, (_req, res) => res.send('It lives!')); // For testing - Check server is up
+        this.app.get('/health' , (_req, res) => res.send('OK'));
     }
+
 
     private errorHandlerMiddleware() {
         this.app.use(schemaValidationError);
