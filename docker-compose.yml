@@ -20,3 +20,5 @@ services:
       - POSTGRES_USER=${DB_USERNAME}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - ./src/db/migrations/dbinit.sql:/docker-entrypoint-initdb.d/dbinit.sql
