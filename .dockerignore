@@ -1,0 +1,7 @@
+.env
+node_modules/
+.git/
+aws-infra-practice-project-plan.md
+build/
+test/
+logo.png
