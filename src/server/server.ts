@@ -36,6 +36,7 @@ class Server {
         const skipAuthOn: unless.Options = {
             path: [
                 { methods: ['GET'], url: '/' },
+                { methods: ['GET'], url: '/health' },
                 { methods: ['POST'], url: '/api/users/login' },
                 { methods: ['POST'], url: '/api/users' },
                 { methods: ['GET'], url: /api\/profiles\/.+\//g },
