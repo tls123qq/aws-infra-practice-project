@@ -45,4 +45,4 @@ yarn.lock
 *.tfvars
 .terraform/
 terraform.tfstate*
-*.tfplan
+tfplan
