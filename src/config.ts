@@ -15,6 +15,8 @@ export const dbPass = process.env.DB_PASSWORD as string;
 export const appPort = parseInt(process.env.APP_PORT || '4000');
 export const dbHost = process.env.DB_HOST || 'localhost';
 export const dbPort = parseInt(process.env.DB_PORT || '5432');
+// RDS requires encrypted connections; local Postgres in docker-compose does not.
+export const dbSsl = process.env.DB_SSL === 'true';
 
 // Static env
 export const saltLength = 32;

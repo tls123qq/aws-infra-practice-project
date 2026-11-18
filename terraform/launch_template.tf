@@ -10,7 +10,7 @@ resource "aws_launch_template" "launch_template" {
     name = aws_iam_instance_profile.pull_ecr_inst_prof.name
   }
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
-  user_data              = filebase64("${path.module}/user_data.sh")
+  user_data              = base64encode(templatefile("${path.module}/user_data.sh", { db_name = aws_db_instance.rds_instance.db_name, db_username = aws_db_instance.rds_instance.username, db_password = var.db_password, db_host = aws_db_instance.rds_instance.address }))
 
   tag_specifications {
     resource_type = "instance"

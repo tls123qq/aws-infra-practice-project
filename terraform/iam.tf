@@ -23,3 +23,8 @@ resource "aws_iam_instance_profile" "pull_ecr_inst_prof" {
   name = "pull_ecr_inst_prof"
   role = aws_iam_role.pull_ecr.id
 }
+
+resource "aws_iam_role_policy_attachment" "ssm_ec2" {
+  role = aws_iam_role.pull_ecr.id
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+}
