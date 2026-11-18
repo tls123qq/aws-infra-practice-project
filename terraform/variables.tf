@@ -27,3 +27,9 @@ variable "availability_zones" {
   type        = list(string)
   default     = ["ap-southeast-1a", "ap-southeast-1b"]
 }
+
+variable "db_password" {
+  description = "The password for db(private)"
+  sensitive   = true
+  type        = string
+}
